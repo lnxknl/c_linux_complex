@@ -438,7 +438,7 @@ static void sigterm_handler(int __attribute__ ((__unused__)) signum)
 	pthread_cancel(network_daemon);
 }
 
-int main(int argc, char **argv)// @NOTE 
+int main(int argc, char **argv)
 {
 	int c;
 	char fname[MAX_IMAGE_FNAME];
@@ -854,7 +854,7 @@ int main(int argc, char **argv)// @NOTE
 		}
 	}
 
-	lua_handlers_init();// @NOTE 
+	lua_handlers_init();
 
 	if(!get_hw_revision(&swcfg.hw))
 		INFO("Running on %s Revision %s", swcfg.hw.boardname, swcfg.hw.revision);

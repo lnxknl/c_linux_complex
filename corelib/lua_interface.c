@@ -1486,7 +1486,7 @@ call_handler_exit:
 	return 2;
 }
 
-int lua_handlers_init(void)// @NOTE 
+int lua_handlers_init(void)
 {
 	static const char location[] =
 #if defined(CONFIG_EMBEDDED_LUA_HANDLER)
