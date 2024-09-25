@@ -1,0 +1,35 @@
+diff --git a/core/swupdate.c b/core/swupdate.c
+index 140dec5..216b862 100644
+--- a/core/swupdate.c
++++ b/core/swupdate.c
+@@ -438,7 +438,7 @@ static void sigterm_handler(int __attribute__ ((__unused__)) signum)
+ 	pthread_cancel(network_daemon);
+ }
+ 
+-int main(int argc, char **argv)
++int main(int argc, char **argv)// @NOTE 
+ {
+ 	int c;
+ 	char fname[MAX_IMAGE_FNAME];
+@@ -854,7 +854,7 @@ int main(int argc, char **argv)
+ 		}
+ 	}
+ 
+-	lua_handlers_init();
++	lua_handlers_init();// @NOTE 
+ 
+ 	if(!get_hw_revision(&swcfg.hw))
+ 		INFO("Running on %s Revision %s", swcfg.hw.boardname, swcfg.hw.revision);
+diff --git a/corelib/lua_interface.c b/corelib/lua_interface.c
+index d785cdb..2e6f637 100644
+--- a/corelib/lua_interface.c
++++ b/corelib/lua_interface.c
+@@ -1486,7 +1486,7 @@ call_handler_exit:
+ 	return 2;
+ }
+ 
+-int lua_handlers_init(void)
++int lua_handlers_init(void)// @NOTE 
+ {
+ 	static const char location[] =
+ #if defined(CONFIG_EMBEDDED_LUA_HANDLER)
